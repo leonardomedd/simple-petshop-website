@@ -57,3 +57,11 @@ footer a:hover {
   height: 300px; /* Defina a altura desejada */
   object-fit: cover; /* Mantém a proporção da imagem */
 }
+
+.cart {
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  max-width: 600px;
+}

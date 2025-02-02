@@ -7,11 +7,12 @@ import Services from './components/Services';
 import Contact from './components/Contact';
 import Cart from './components/Cart'; // Importe o componente Cart
 import NavigationBar from './components/Navbar';
-import Footer from './components/Footer';  // Importe o Footer
+import Footer from './components/Footer'; // Importe o Footer
+import { CartProvider } from './CartContext'; // Importe o CartProvider
 
 function App() {
   return (
-    <>
+    <CartProvider>
       <NavigationBar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -21,8 +22,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<Cart />} /> {/* Adicione a rota /cart */}
       </Routes>
-      <Footer />  {/* Certifique-se de usar o Footer */}
-    </>
+      <Footer /> {/* Certifique-se de usar o Footer */}
+    </CartProvider>
   );
 }
 

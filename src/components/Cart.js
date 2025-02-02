@@ -1,14 +1,32 @@
-import React from 'react';
-import { Container } from 'react-bootstrap';
+// components/Cart.js
+import React, { useContext } from 'react';
+import { Container, Button, ListGroup } from 'react-bootstrap';
+import { CartContext } from '../CartContext';
 
-function Cart() {
+const Cart = () => {
+  const { cart, removeFromCart } = useContext(CartContext);
+
   return (
-    <Container>
-      <h1>Your Cart</h1>
-      <p>This is the cart page where you can see the items you have added to your cart.</p>
-      {/* Adicione mais conteúdo conforme necessário */}
+    <Container className="my-5">
+      <h2>Shopping Cart</h2>
+      {cart.length === 0 ? (
+        <p>Your cart is empty</p>
+      ) : (
+        <ListGroup>
+          {cart.map((item, index) => (
+            <ListGroup.Item key={index} className="d-flex justify-content-between align-items-center">
+              <div>
+                {item.name} - ${item.price.toFixed(2)}
+              </div>
+              <Button variant="danger" onClick={() => removeFromCart(item.id)}>
+                Remove
+              </Button>
+            </ListGroup.Item>
+          ))}
+        </ListGroup>
+      )}
     </Container>
   );
-}
+};
 
 export default Cart;

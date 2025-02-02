@@ -1,10 +1,24 @@
-import React from 'react';
+// components/Products.js
+import React, { useContext } from 'react';
 import { Container, Button, Row, Col, Card } from 'react-bootstrap';
-import productImage1 from '../images/product1.jpg'; // Substitua pelo caminho correto da imagem
-import productImage2 from '../images/product2.png'; // Substitua pelo caminho correto da imagem
-import productImage3 from '../images/product3.png'; // Substitua pelo caminho correto da imagem
+import { CartContext } from '../CartContext';
+import productImage1 from '../images/product1.jpg';
+import productImage2 from '../images/product2.png';
+import productImage3 from '../images/product3.png';
 
 function Products() {
+  const { addToCart } = useContext(CartContext);
+
+  const products = [
+    { id: 1, name: 'Product 1', description: 'Description of Product 1', price: 10.00, image: productImage1 },
+    { id: 2, name: 'Product 2', description: 'Description of Product 2', price: 20.00, image: productImage2 },
+    { id: 3, name: 'Product 3', description: 'Description of Product 3', price: 30.00, image: productImage3 },
+  ];
+
+  const handleBuyNow = (product) => {
+    addToCart(product);
+  };
+
   return (
     <Container className="my-5">
       <Row>
@@ -14,36 +28,19 @@ function Products() {
         </Col>
       </Row>
       <Row>
-        <Col md={4}>
-          <Card>
-            <Card.Img variant="top" src={productImage1} alt="Product 1" className="product-image" />
-            <Card.Body>
-              <Card.Title>Product 1</Card.Title>
-              <Card.Text>Description of Product 1.</Card.Text>
-              <Button variant="primary" className="btn btn-primary">Buy Now</Button>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={4}>
-          <Card>
-            <Card.Img variant="top" src={productImage2} alt="Product 2" className="product-image" />
-            <Card.Body>
-              <Card.Title>Product 2</Card.Title>
-              <Card.Text>Description of Product 2.</Card.Text>
-              <Button variant="primary" className="btn btn-primary">Buy Now</Button>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={4}>
-          <Card>
-            <Card.Img variant="top" src={productImage3} alt="Product 3" className="product-image" />
-            <Card.Body>
-              <Card.Title>Product 3</Card.Title>
-              <Card.Text>Description of Product 3.</Card.Text>
-              <Button variant="primary" className="btn btn-primary">Buy Now</Button>
-            </Card.Body>
-          </Card>
-        </Col>
+        {products.map(product => (
+          <Col md={4} key={product.id}>
+            <Card>
+              <Card.Img variant="top" src={product.image} alt={product.name} className="product-image" />
+              <Card.Body>
+                <Card.Title>{product.name}</Card.Title>
+                <Card.Text>{product.description}</Card.Text>
+                <Card.Text>Price: ${product.price.toFixed(2)}</Card.Text>
+                <Button variant="primary" className="btn btn-primary" onClick={() => handleBuyNow(product)}>Buy Now</Button>
+              </Card.Body>
+            </Card>
+          </Col>
+        ))}
       </Row>
     </Container>
   );
