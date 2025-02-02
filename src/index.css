@@ -1,0 +1,59 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa; /* Fundo geral */
+  margin: 0;
+  padding: 0;
+}
+
+h1, h5 {
+  color: #333;
+  font-weight: 600;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+footer {
+  background-color: transparent;
+  color: #000; /* Letras pretas no footer */
+  padding: 20px 0;
+  border: none; /* Remover borda */
+}
+
+footer a {
+  color: #000; /* Letras pretas no footer */
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #007bff;
+}
+
+.container {
+  background: #FFA07A; /* Laranja claro */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para todos os botões */
+.btn, .button-primary, .btn-primary {
+  background-color: #800080; /* Roxo */
+  border-color: #800080;
+  color: white;
+}
+
+.btn:hover, .button-primary:hover, .btn-primary:hover {
+  background-color: #9932CC; /* Tom mais claro de roxo */
+  border-color: #9932CC;
+}
+
+.product-image {
+  width: 100%;
+  height: 300px; /* Defina a altura desejada */
+  object-fit: cover; /* Mantém a proporção da imagem */
+}
