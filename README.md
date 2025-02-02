@@ -1,6 +1,6 @@
 # 🐾 PetShop Website
 
-Este projeto é uma aplicação web de e-commerce para a loja de animais de estimação **PetShop**. Desenvolvida com React e Bootstrap, a aplicação apresenta um catálogo de produtos, carrinho de compras e página de contato, proporcionando uma experiência de usuário intuitiva e responsiva.
+Este projeto é uma aplicação web de e-commerce para a loja (fícticia) de animais de estimação **PetShop**. Desenvolvida com React e Bootstrap, a aplicação apresenta um catálogo de produtos, carrinho de compras e página de contato, proporcionando uma experiência de usuário intuitiva e responsiva.
 
 ## 🌟 Funcionalidades
 - 🏠 **Página Inicial**: Apresenta uma visão geral da loja e dos produtos em destaque.
