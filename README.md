@@ -19,8 +19,11 @@ Este projeto é uma aplicação web de e-commerce para a loja (fícticia) de ani
 Para rodar este projeto localmente, siga os passos abaixo:
 
 git clone https://github.com/leonardomedd/simple-petshop-website.git
+
 cd simple-petshop-website
+
 npm install
+
 npm start
 
 ## 📖 Uso
